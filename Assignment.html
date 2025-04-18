@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stylish Profile Card</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 2rem;
+      width: 320px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: all 0.4s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .profile-pic-container {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 1rem auto;
+      padding: 4px;
+      background: conic-gradient(from 180deg at 50% 50%, #23a6d5, #e73c7e, #ee7752, #23d5ab);
+      animation: rotate 6s linear infinite;
+    }
+
+    @keyframes rotate {
+      100% { transform: rotate(360deg); }
+    }
+
+    .profile-pic {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid white;
+    }
+
+    .name {
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: #fff;
+      margin-bottom: 0.3rem;
+    }
+
+    .designation {
+      font-size: 1rem;
+      color: #f0f0f0;
+      margin-bottom: 1rem;
+    }
+
+    .bio {
+      font-size: 0.95rem;
+      color: #ddd;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.4rem;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.3);
+      color: #ffcc00;
+    }
+
+    @media (max-width: 400px) {
+      .card {
+        width: 90%;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+  
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="card">
+    <div class="profile-pic-container">
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Profile Picture" class="profile-pic" />
+    </div>
+    <div class="name">Soname Hirudkar</div>
+    <div class="designation">Java Full Stack Developer</div>
+    <div class="bio">Passionated about programming</div>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-dribbble"></i></a>
+      <a href="#"><i class="fab fa-behance"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</body>
+</html>
