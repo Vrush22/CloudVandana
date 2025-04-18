@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Slider</title>
+  <script>
+    
+    var imgarr = ["pic1.jpeg", "pic2.avif", "pic3.jpg", "pic4.jpg"];
+    var index = 0;
+
+   
+    function nextImg() {
+      index++;
+      if (index === imgarr.length) {
+        index = 0;
+      }
+      document.getElementById("myimg").src = imgarr[index];
+    }
+
+    
+    function previousImg() {
+      index--;
+      if (index < 0) {
+        index = imgarr.length - 1;
+      }
+      document.getElementById("myimg").src = imgarr[index];
+    }
+  </script>
+</head>
+<body>
+
+  <h2>Simple Image Slider</h2>
+
+  
+  <img src="pic1.png" width="300" height="200" id="myimg" alt="Image Slider" />
+
+  <br/><br/>
+
+  
+  <button onclick="previousImg()">PREVIOUS</button>
+  <button onclick="nextImg()">NEXT</button>
+
+</body>
+</html>
